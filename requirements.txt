@@ -1,2 +1,2 @@
 Django == 5.0.3
-Psycopg2 == 2.9.1
+Psycopg2-binary == 2.9.1
