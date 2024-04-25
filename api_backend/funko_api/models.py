@@ -7,9 +7,13 @@ class Funko(models.Model):
     collection = models.CharField(max_length= 128)
     is_backlight = models.BooleanField(default= False)
     
+    def __str__(self):
+        return f'{self.numero} - {self.name}'
+    
 class User(models.Model):
     name= models.CharField(max_length= 128)
-    funkos= models.ForeignKey(Funko, on_delete=models.PROTECT)
+    funkos= models.ManyToManyField(Funko, blank=True)
 
-    
+    def __str__(self):
+        return self.name
     
